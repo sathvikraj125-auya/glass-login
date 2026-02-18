@@ -1,59 +1,25 @@
-# 🔐 Glassmorphism Login System
+  # 🔐 Glassmorphism Login System
 
-A modern authentication system with a premium glass UI and real Firebase backend.
-
----
+A modern authentication system with Firebase and premium glass UI.
 
 ## 🚀 Features
-
-- Glassmorphism UI with animated background  
-- User Signup & Login (Firebase Authentication)  
-- Protected Dashboard (restricted access without login)  
-- Logout functionality  
-- Responsive and clean design  
-
----
+- Login & Signup (Firebase)
+- Protected dashboard
+- Logout system
+- Glassmorphism UI with beach background
 
 ## 🛠️ Tech Stack
-
-- HTML  
-- CSS (Glassmorphism + animations)  
-- JavaScript  
-- Firebase Authentication  
-
----
-
-## 📸 Screenshots
-
-(Add your screenshots here)
-
----
-
-## 🌐 Live Demo
-
-(Add Netlify link here)
-
----
+- HTML
+- CSS
+- JavaScript
+- Firebase
 
 ## 📂 Project Structure
-
-index.html
-signup.html
-dashboard.html
-style.css
-dashboard.css
-script.js
-
----
-
-## 📌 What I Learned
-
-- How authentication works using Firebase  
-- Connecting frontend with backend services  
-- Building modern UI with glassmorphism  
-
----
+index.html  
+signup.html  
+dashboard.html  
+style.css  
+dashboard.css  
 
 ## 👨‍💻 Author
-
 Sathvik
