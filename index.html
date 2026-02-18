@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<div class="container">
+    <form class="login-box" id="loginForm">
+        <h2>Login</h2>
+
+        <div class="input-box">
+            <input type="email" id="email" placeholder="Email">
+        </div>
+
+        <div class="input-box">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+
+        <p id="errorMsg"></p>
+
+        <button type="submit">Login</button>
+
+        <p style="color:white; margin-top:10px;">
+            Don't have an account?
+            <a href="signup.html">Sign up</a>
+        </p>
+    </form>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCl2BcK-aT1W1qlUTGQHtSATCIitkkeMY8",
+  authDomain: "glass-login-d865a.firebaseapp.com",
+  projectId: "glass-login-d865a",
+  storageBucket: "glass-login-d865a.firebasestorage.app",
+  messagingSenderId: "394616536959",
+  appId: "1:394616536959:web:6580ff9989a6585b5ea44a"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const form = document.getElementById("loginForm");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const errorMsg = document.getElementById("errorMsg");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    errorMsg.textContent = "Checking...";
+    errorMsg.style.color = "white";
+
+    try {
+        await signInWithEmailAndPassword(auth, email.value, password.value);
+        errorMsg.style.color = "lightgreen";
+        errorMsg.textContent = "Login successful";
+
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+        }, 800);
+
+    } catch (error) {
+        errorMsg.style.color = "red";
+        errorMsg.textContent = error.message;
+    }
+});
+</script>
+
+</body>
+</html>
